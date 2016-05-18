@@ -97,7 +97,7 @@ TEST(GoalUndoTest, OperationCheckOnaddOperationWithEmptyOperationAndGoal)
   g.addOperation("","");
 	ASSERT_EQ(g.getOperations(), "operation0");
 }
-TEST(GoalUndoTest, addOperationWithGoalSpecified)
+TEST(GoalUndoTest, GoalCheckaddOperationWithGoalSpecified)
 { GoalUndo g;
   g.addOperation("Goal1","operation1");
   g.addOperation("operation2");
@@ -211,12 +211,12 @@ TEST(GoalUndoTest, GoalCheckOnUndoOperationWithMultipleLatestOperation)
   g.undoOperation();
 	ASSERT_EQ(g.getGoal(), "Goal0");
 }
-TEST(GoalUndoTest, GoalCheckOnUndoOperationBasicWithEmptyGoallist)
+TEST(GoalUndoTest, GoalCheckOnUndoOperationWithEmptyGoallist)
 { GoalUndo g;
   g.undoOperation();
 	ASSERT_EQ(g.getGoal(), "");
 }
-TEST(GoalUndoTest, OperationsCheckOnUndoOperationBasicWithEmptyGoallist)
+TEST(GoalUndoTest, OperationsCheckOnUndoOperationWithEmptyGoallist)
 { GoalUndo g;
   g.undoOperation();
 	ASSERT_EQ(g.getOperations(), "");
